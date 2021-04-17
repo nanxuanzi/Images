@@ -1,9 +1,105 @@
-<html lang="zh-cn">
-  <head>
-        <title>image</title>
-  </head>
-  <body>
-        <p>test</p>
-        <image src="https://cdn.jsdelivr.net/gh/nanxuanzi/image@v1.1/psc.jpg"/>
-  </body>
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="https://cdn.jsdelivr.net/gh/nanxuanzi/Images/">
+    <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/nanxuanzi/nanxuanzi.github.io/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="images.css">
+    <script src="images.js"></script>
+    <title>图床-github</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color:#E8E8E8;
+        }
+        /*大盒子*/
+        div.box{
+            width: 1200px;
+            margin: 0px auto;
+            margin-bottom: 10px;
+            background-color:white;
+            padding: 5px;
+        }
+        #info {
+            text-align: center;
+        }
+
+        /*h3 and hr*/
+        h3{
+            margin-left: 10px;
+        }
+        hr{
+            height: 1px;
+            margin-left: 10px;
+            background-color: black;
+        }
+
+        /*小盒子-存放图片*/
+        .box_img{
+            width: 1150px;
+            margin: 5px auto; 
+            border-radius: 4px;
+            background-color:white;
+        }
+
+        /*单独图片的布局，超过盒子的宽度会自动换行*/
+        #i img{
+            width: 200px;
+            margin-left: 25px; 
+        }
+
+        #h img{
+            width: 200px;
+            margin-left: 25px;
+        }
+        #v img{
+            width: 200px;
+            margin-left: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="info">
+        <h1>图床-Github</h1>
+        <p>Author:南轩子</p>
+    </div>
+
+    <div class="box">
+        <h3>图床【自定义】</h2><hr>
+        <div class="box_img" id="i">
+            <img src="./h/1.jpg" alt="haha">
+            <img src="./h/1.jpg" alt="haha">
+            <img src="./h/1.jpg" alt="haha">
+            <img src="./h/1.jpg" alt="haha">
+            <img src="./h/1.jpg" alt="haha">
+            <img src="./h/1.jpg" alt="haha">
+            <img src="./h/1.jpg" alt="haha">
+            <img src="./h/1.jpg" alt="haha">
+            <img src="./h/1.jpg" alt="haha">
+            <img src="./h/1.jpg" alt="haha">
+            <img src="./h/2.png" alt="haha">
+            <img src="./v/girl/1.jpg" alt="">
+        </div>
+    </div>
+
+    <div class="box">
+        <h3>图床【横向】</h2><hr>
+        <div class="box_img" id="h">
+            
+        </div>
+    </div>
+
+    <div class="box">
+        <h3>图床【纵向】</h2><hr>
+        <div class="box_img" id="v">
+            <img src="./v/girl/1.jpg" alt=""><img src="./v/girl/2.jpg" alt=""><img src="./v/girl/3.jpg" alt=""><img src="./v/girl/4.jpg" alt=""><img src="./v/girl/5.jpg" alt=""><img src="./v/girl/6.jpg" alt=""><img src="./v/girl/11.jpg" alt=""><img src="./v/girl/8.jpg" alt=""><img src="./v/girl/9.jpg" alt=""><img src="./v/girl/10.jpg" alt="">
+        </div>
+    </div>
+    
+</body>
 </html>
