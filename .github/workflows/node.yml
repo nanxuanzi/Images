@@ -34,19 +34,14 @@ jobs:
       - name: '上传仓库'
           # env，环境变量
           env:
-          # github_token是自动生成的
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            # github_token是自动生成的
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            USER_NAME: ${{ secrets.USER_NAME }}
+            USER_EMAIL: ${{ secrets.USER_EMAIL}}
+
+          run:
+            git push
           
-          run: |
-            git config --global user.name '${{ secrets.USER_NAME }}'
-            git config --global user.email '${{ secrets.USER_EMAIL}}'
-            git add ./
-            git commit -m "null"
-            git remote add origin https://github.com/nanxuanzi/Images.git
-            git push origin master
-            
-          with: 
-            ${{ secrets.USER_TOKEN}}
           
   
   
