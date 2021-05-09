@@ -30,14 +30,10 @@ jobs:
       - name: '运行main.js'
           # run，运行命令, | 运行一组命令
         run: node ./main.js
-  
-  job2:
-    name: '上传仓库'
-    need: build
 
-    steps:
-      - run: echo hello
-    
+      - name: '上传仓库'
+        run: echo '我想创建仓库。'
+  
   
       
 
