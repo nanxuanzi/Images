@@ -17,7 +17,7 @@ jobs:
     runs-on: unbuntu-last
 
     # steps表示运行步骤，单个步骤 -
-    step:
+    steps:
 
       # name, 表示步骤名称
       - name: '获取厂库'
