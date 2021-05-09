@@ -14,7 +14,7 @@ jobs:
     name: '环境准备'
 
     #runs-on，指定运行的环境
-    runs-on: unbuntu-last
+    runs-on: ubuntu-latest
 
     # steps表示运行步骤，单个步骤 -
     steps:
