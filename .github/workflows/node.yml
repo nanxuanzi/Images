@@ -1,0 +1,34 @@
+# 名称
+name: Node运行main.js
+
+# 触发条件
+on:
+  push:
+    branches:
+    - master
+
+# jobs 任务
+jobs:
+  # 任务一
+  build:
+    name: '环境准备'
+
+    #runs-on，指定运行的环境
+    runs-on: unbuntu-last
+
+    # steps表示运行步骤，单个步骤 -
+    step:
+
+      # name, 表示步骤名称
+      - name: '获取厂库'
+      # uses，引用action或docker镜像
+        uses: actions/checkout@v2
+      
+      - name: '安装Node'
+        uses: actions/setup-node@v2
+        with: 
+          node-version: 'v14.16.1'
+
+      - name: '运行main.js'
+      # run，运行命令, | 运行一组命令
+        run: node ./main.js
