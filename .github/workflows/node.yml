@@ -32,4 +32,5 @@ jobs:
         run: node ./main.js
 
       - name: '提交到仓库'
-      
+        run: echo Hello World
+
