@@ -12,16 +12,14 @@ jobs:
   # 任务一
   build:
     name: '环境准备'
-
     #runs-on，指定运行的环境
     runs-on: ubuntu-latest
 
     # steps表示运行步骤，单个步骤 -
     steps:
-
-      # name, 表示步骤名称
-      - name: '获取厂库'
-      # uses，引用action或docker镜像
+          # name, 表示步骤名称
+      - name: '获取仓库'
+          # uses，引用action或docker镜像
         uses: actions/checkout@v2
       
       - name: '安装Node'
@@ -30,5 +28,8 @@ jobs:
           node-version: 'v14.16.1'
 
       - name: '运行main.js'
-      # run，运行命令, | 运行一组命令
+          # run，运行命令, | 运行一组命令
         run: node ./main.js
+
+      - name: '提交到仓库'
+      
