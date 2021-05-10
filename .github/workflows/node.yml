@@ -40,7 +40,7 @@ jobs:
             USER_EMAIL: ${{ secrets.USER_EMAIL}}
 
           run:
-            git push
+            echo Hello World
           
           
   
