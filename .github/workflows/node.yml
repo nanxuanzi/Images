@@ -35,6 +35,8 @@ jobs:
       - name: '上传仓库'
 
         # 环境变量 env
+        # 环境变量的使用： $变量名
+        # ${{ secrets.名称 }} 是在仓库中的setting设置的
         env: 
           NAME: ${{ secrets.USER_NAME }}
           EMAIL: ${{ secrets.USER_EMAIL }}
