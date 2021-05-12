@@ -4,74 +4,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <base href="https://cdn.jsdelivr.net/gh/nanxuanzi/Images@master/">
+    <!--
+        <base href="https://cdn.jsdelivr.net/gh/nanxuanzi/Images@master/">
+    
+    -->
     <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/nanxuanzi/nanxuanzi.github.io/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./css/images.css">
     <script src="./js/images.js"></script>
-    <title>图床-github</title>
-    <style>
-        *{
-            margin: 0;
-            padding: 0;
-        }
-        body{
-            background-color:#E8E8E8;
-        }
-        /*大盒子*/
-        div.box{
-            width: 1200px;
-            margin: 0px auto;
-            margin-bottom: 10px;
-            background-color:white;
-            padding: 5px;
-        }
-        #info {
-            text-align: center;
-        }
-
-        /*h3 and hr*/
-        h3{
-            margin-left: 10px;
-        }
-        hr{
-            height: 1px;
-            margin-left: 10px;
-            background-color: black;
-        }
-
-        /*小盒子-存放图片*/
-        .box_img{
-            width: 1150px;
-            margin: 5px auto; 
-            border-radius: 4px;
-            background-color:white;
-        }
-
-        /*单独图片的布局，超过盒子的宽度会自动换行*/
-        #i img{
-            width: 200px;
-            margin-left: 25px; 
-        }
-
-        #h img{
-            width: 200px;
-            margin-left: 25px;
-        }
-        #v img{
-            width: 200px;
-            margin-left: 25px;
-        }
-    </style>
-    <script>
-		
+    
+    <script src="https://upcdn.b0.upaiyun.com/libs/jquery/jquery-2.0.2.min.js">
     </script>
+    <title>图床-github</title>
+    
+    
 </head>
 <body>
+    <script>
+        $(function(){//文档加载完成后再操作
+            //打开Github项目仓库
+            $("div#info h1").click(
+                function(){
+                    window.open("https://github.com/nanxuanzi/Images");
+                }
+            );
+            //打开Github个人信息
+            $("div#info p").click(function(){
+                window.open("https://github.com/nanxuanzi");
+            });
+        })
+    </script>
     <div class="box" id="info">
-        <h1 onclick="sites.click_url(sites.images);">图床-Github</h1>
-        <p onclick="sites.click_url(sites.github);">Author:南轩子</p>
+        <h1>图床-Github</h1>
+        <p>Author:南轩子</p>
     </div>
 
+    
     <div class="box">
         <h3>图床【自定义】</h2><hr>
         <div class="img_box" id="i">

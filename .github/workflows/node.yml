@@ -33,14 +33,8 @@ jobs:
 
       - name: '上传仓库'
           # env，环境变量
-          env:
-            # github_token是自动生成的
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-            USER_NAME: ${{ secrets.USER_NAME }}
-            USER_EMAIL: ${{ secrets.USER_EMAIL}}
-
           run:
-            echo Hello World
+            git remote
           
           
   

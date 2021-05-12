@@ -28,7 +28,7 @@ hr{
 }
 
 /*小盒子-存放图片*/
-.box_img{
+.img_box{
     width: 1150px;
     margin: 5px auto; 
     border-radius: 4px;
