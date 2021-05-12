@@ -33,7 +33,7 @@ jobs:
 
       - name: '上传仓库'
         run:
-            git remote
+            git remote get-url origin
           
           
   
