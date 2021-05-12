@@ -32,8 +32,10 @@ jobs:
         run: node ./node_main.js
 
       - name: '上传仓库'
-        run:
-            git remote get-url origin
+        run: |
+            git add ./
+            git commit -m "Action Work"
+            git push origin master
           
           
   
