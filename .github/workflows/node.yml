@@ -31,13 +31,20 @@ jobs:
           # run，运行命令, | 运行一组命令
         run: node ./node_main.js
 
+      
       - name: '上传仓库'
+
+        # 环境变量 env
+        env: 
+          NAME: ${{ secrets.USER_NAME }}
+          EMAIL: ${{ secrets.USER_EMAIL }}
+
         run: |
-            git config --global user.name 'nanxuanzi'
-            git config --global user.email '878216066@qq.com'
+            git config --global user.name $NAME
+            git config --global user.email $EMAIL
 
             git add ./
-            git commit -m "Action Work"
+            git commit -m "Action Result"
             git push origin master
           
           
