@@ -33,6 +33,9 @@ jobs:
 
       - name: '上传仓库'
         run: |
+            git config --global user.name 'nanxuanzi'
+            git config --global user.email '878216066@qq.com'
+
             git add ./
             git commit -m "Action Work"
             git push origin master
