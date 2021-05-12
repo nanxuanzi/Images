@@ -39,6 +39,7 @@ jobs:
           NAME: ${{ secrets.USER_NAME }}
           EMAIL: ${{ secrets.USER_EMAIL }}
 
+        # 设置git信息，然后push到仓库
         run: |
             git config --global user.name $NAME
             git config --global user.email $EMAIL
