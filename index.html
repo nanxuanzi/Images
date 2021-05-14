@@ -10,28 +10,20 @@
     -->
     <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/nanxuanzi/nanxuanzi.github.io/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./css/images.css">
-    <script src="./js/images.js"></script>
-    
     <script src="https://upcdn.b0.upaiyun.com/libs/jquery/jquery-2.0.2.min.js">
     </script>
+    <script src="./js/images.js"></script>
+    <script src="./js/info.js"></script>
+    <script src="./js/imgTag.js"></script>
+    
+    
     <title>图床-github</title>
     
     
 </head>
 <body>
     <script>
-        $(function(){//文档加载完成后再操作
-            //打开Github项目仓库
-            $("div#info h1").click(
-                function(){
-                    window.open("https://github.com/nanxuanzi/Images");
-                }
-            );
-            //打开Github个人信息
-            $("div#info p").click(function(){
-                window.open("https://github.com/nanxuanzi");
-            });
-        })
+        
     </script>
     <div class="box" id="info">
         <h1>图床-Github</h1>
@@ -41,36 +33,23 @@
     
     <div class="box">
         <h3>图床【自定义】</h2><hr>
-        <div class="img_box" id="i">
-            <img src="./img/h/1.jpg" alt="haha">
-            <img src="./img/h/1.jpg" alt="haha">
-            <img src="./img/h/1.jpg" alt="haha">
-            <img src="./img/h/1.jpg" alt="haha">
-            <img src="./img/h/1.jpg" alt="haha">
-            <img src="./img/h/1.jpg" alt="haha">
-            <img src="./img/h/1.jpg" alt="haha">
-            <img src="./img/h/1.jpg" alt="haha">
-            <img src="./img/h/1.jpg" alt="haha">
-            <img src="./img/h/1.jpg" alt="haha">
-            <img src="./img/h/2.png" alt="haha">
-            <img src="./img/v/girl/1.jpg" alt="">
+        <div class="img-box" id="i">
+            
         </div>
     </div>
 
     <div class="box">
             <h3>图床【横向】</h2><hr>
-            <div class="img_box" id="h">
-                <img src="./img/h/2.png" alt="haha">
-                <img src="./img/v/girl/1.jpg" alt="">
+            <div class="img-box" id="h">
+                
             </div>
-        </div>
+    </div>
 
-        <div class="box">
+    <div class="box">
         <h3>图床【纵向】</h2><hr>
-        <div class="img_box" id="v">
-            <img src="./img/v/girl/1.jpg" alt=""><img src="./img/v/girl/2.jpg" alt=""><img src="./img/v/girl/3.jpg" alt=""><img src="./img/v/girl/4.jpg" alt=""><img src="./img/v/girl/5.jpg" alt=""><img src="./img/v/girl/6.jpg" alt=""><img src="./img/v/girl/11.jpg" alt=""><img src="./img/v/girl/8.jpg" alt=""><img src="./img/v/girl/9.jpg" alt=""><img src="./img/v/girl/10.jpg" alt="">
+        <div class="img-box" id="v">
+
         </div>
     </div>
-    
 </body>
 </html>
