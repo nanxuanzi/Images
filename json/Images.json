@@ -7,16 +7,12 @@
         }
     },
     "img": {
-        "h": {
-            "1.jpg": "./img/h/1.jpg",
-            "2.png": "./img/h/2.png"
-        },
         "v": {
             "girl": {
                 "1.jpg": "./img/v/girl/1.jpg",
                 "10.jpg": "./img/v/girl/10.jpg",
-                "11.jpg": "./img/v/girl/11.jpg",
                 "12.jpg": "./img/v/girl/12.jpg",
+                "11.jpg": "./img/v/girl/11.jpg",
                 "13.jpg": "./img/v/girl/13.jpg",
                 "14.jpg": "./img/v/girl/14.jpg",
                 "15.jpg": "./img/v/girl/15.jpg",
@@ -44,6 +40,10 @@
                 "8.jpg": "./img/v/girl/8.jpg",
                 "9.jpg": "./img/v/girl/9.jpg"
             }
+        },
+        "h": {
+            "1.jpg": "./img/h/1.jpg",
+            "2.png": "./img/h/2.png"
         }
     }
 }
