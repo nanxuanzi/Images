@@ -4,8 +4,8 @@
 
 //获取json对象
 $(function(){
-    //get请求json
-    $.get('https://cdn.jsdelivr.net/gh/nanxuanzi/Images@master/json/Images.json',(data,status)=>{
+    //get请求json https://cdn.jsdelivr.net/gh/nanxuanzi/Images@master
+    $.get('/json/Images.json',(data,status)=>{
         if(status='success'){
             console.log('请求json成功！')
             console.log(status)
