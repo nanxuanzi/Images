@@ -4,20 +4,19 @@ let path = require('path');
 
 //准备：opt, init初始化
 const opt = {
-    //保存目录路径，采用相对路径, 最后不要加/
-    savePath: './json/eee',       
+    //保存目录：默认为 【./json/dir.json】
+    savaPath: './json',       //相对路径, 最后不要加/
 
-    //读取目录，采用相对路径
-    readPath: '../fileTree',//../../../upload 
+    //读取目录
+    readPath: '../../../upload',    //相对路径
 
-    //保存value的路径类型：【绝对或相对路径】（abs/rel）
+    //路径：绝对或相对（abs/rel）
     path: 'rel',
 
-    //result，存在生成的json
+    //result
+    //base
 
-    //base，读取的目录（绝对路径）
-
-    //save，保存的路径（相对路径）    
+    //save    
 }
 let init = (opt)=>{
 
@@ -25,37 +24,20 @@ let init = (opt)=>{
     result = opt.result = {}
 
     //保存的目录路径
-    let save = path.resolve(__dirname, opt.savePath).split(path.sep).join('/')
+    let save = path.resolve(__dirname, opt.savaPath).split(path.sep).join('/')
         //该目录路径不存在，则创建它
-        fs.open(opt.savePath,'r',(err,fd)=>{
+        fs.open(opt.savaPath,'r',(err,fd)=>{
             if(err){
-                //创建
-                fs.mkdir(opt.savePath,{ recursive: true }, (err) => {
+                fs.mkdir(opt.savaPath,{ recursive: true }, (err) => {
                     if (err) throw err;
-
-                    //保存文件位置(相对路径)，添加到opt基本不变
-                    opt.save = opt.savePath +'/'+ key+'.json'
                 });
-                console.log('保存目录不存在，但我已帮你创建好了！：'+save)
+            }else{
+                console.log('SavePath：exist.')
             }
-            opt.save = opt.savePath +'/'+ key+'.json'
         })
 
-    //要读取的目录路径(绝对路径)、是否存在
-        //读取目录路径
-        let read = path.resolve(__dirname, opt.readPath).split(path.sep).join('/')
-        
-            //该目录路径不存在，停止程序
-            fs.open(opt.readPath, 'r', (err,fd)=>{
-                
-                //base要读取目录的绝对路径
-                if(err){//路径不存在
-                    opt.base = 'null'
-
-                }else{//存在
-                    opt.base = read     
-                }
-            })
+    //读取的目录路径、是否存在
+    let read = path.resolve(__dirname, opt.readPath).split(path.sep).join('/')
     
     //根据读取目录名，在result内添加 key为目录名，值为空json对象
         //key
@@ -64,6 +46,10 @@ let init = (opt)=>{
         //根据key，在result内添加{}, result[key]，也就是value
         let value = result[key] = {} // result[upload]
 
+    //添加opt属性，基本不变的
+        opt.base = read     //读取目录
+        opt.save = opt.savaPath +'/'+ key+'.json' //保存的文件(绝对路径)
+    
     return [result, save, read, key, value]
 }
 //- - - - end - - - - //
@@ -177,12 +163,8 @@ function tree(opt) {
         let dir = initSet[2]    //upload
         let key = initSet[3]  // result[upload]
         let value = initSet[4]
-    
-        if(opt.base == 'null'){
-            console.log('要读取的目录不存在吧!')
-        }else{
-            read(dir, key, value)
-        }
+
+    read(dir, key, value)
 }
 tree(opt)
 
