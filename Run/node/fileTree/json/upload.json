@@ -1,16 +1,23 @@
 {
     "upload": {
-        "test": {
-            "test": {
-                "me": {
-                    "a": "test/test/me/a"
-                }
-            }
-        },
-        "blog": {
-            "新建文本文档.txt": "blog/新建文本文档.txt"
-        },
+        "blog": {},
         "README.md": "README.md",
-        "typora": {}
+        "typora": {
+            "image-JavaSE-Base.png": "typora/image-JavaSE-Base.png",
+            "image-JavaSE-可变参数.png": "typora/image-JavaSE-可变参数.png",
+            "image-JavaSE-多态.png": "typora/image-JavaSE-多态.png",
+            "image-JavaSE-封装.png": "typora/image-JavaSE-封装.png",
+            "image-JavaSE-抛出异常.png": "typora/image-JavaSE-抛出异常.png",
+            "image-JavaSE-抽象类.png": "typora/image-JavaSE-抽象类.png",
+            "image-JavaSE-捕捉异常.png": "typora/image-JavaSE-捕捉异常.png",
+            "image-JavaSE-接口.png": "typora/image-JavaSE-接口.png",
+            "image-JavaSE-方法重载.png": "typora/image-JavaSE-方法重载.png",
+            "image-JavaSE-构造器.png": "typora/image-JavaSE-构造器.png",
+            "image-JavaSE-继承-01.png": "typora/image-JavaSE-继承-01.png",
+            "image-JavaSE-继承-super01.png": "typora/image-JavaSE-继承-super01.png",
+            "image-JavaSE-继承-super03.png": "typora/image-JavaSE-继承-super03.png",
+            "image-JavaSE-继承-super02.png": "typora/image-JavaSE-继承-super02.png",
+            "image-JavaSE-继承-重写.png": "typora/image-JavaSE-继承-重写.png"
+        }
     }
 }
