@@ -9,7 +9,7 @@ const myJson = {
 
 let save_path = './json/Images.json'
 main('./img')
-main('./ImgHosting')
+//main('./ImgHosting')
 /*
     【介绍】：将某个目录下所有的文件和目录添加到json对象并保存到json文件。
     【用法】：

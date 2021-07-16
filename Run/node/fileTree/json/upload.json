@@ -1,0 +1,16 @@
+{
+    "upload": {
+        "test": {
+            "test": {
+                "me": {
+                    "a": "test/test/me/a"
+                }
+            }
+        },
+        "blog": {
+            "新建文本文档.txt": "blog/新建文本文档.txt"
+        },
+        "README.md": "README.md",
+        "typora": {}
+    }
+}
