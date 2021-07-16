@@ -1,24 +1,26 @@
+/*    
+    option = {
+                //保存目录路径，采用相对路径, 最后不要加/
+                savePath: './json',       
+
+                //读取目录，采用相对路径
+                readPath: '../fileTree',
+
+                //保存value的路径类型：【绝对或相对路径】（abs/rel）
+                path: 'rel'
+
+                //result，存在生成的json
+
+                //base，读取的目录（绝对路径）
+
+                //save，保存的路径（相对路径）    
+            }
+*/
+
 //require
 let fs = require('fs');
 let path = require('path');
-
 //准备：opt, init初始化
-const opt = {
-    //保存目录路径，采用相对路径, 最后不要加/
-    savePath: './json/eee',       
-
-    //读取目录，采用相对路径
-    readPath: '../fileTree',//../../../upload 
-
-    //保存value的路径类型：【绝对或相对路径】（abs/rel）
-    path: 'rel',
-
-    //result，存在生成的json
-
-    //base，读取的目录（绝对路径）
-
-    //save，保存的路径（相对路径）    
-}
 let init = (opt)=>{
 
     //opt添加一个result存放内容
@@ -59,7 +61,7 @@ let init = (opt)=>{
     
     //根据读取目录名，在result内添加 key为目录名，值为空json对象
         //key
-        let key = path.parse(read).name //upload
+        let key = opt.basedir = path.parse(read).name //upload
 
         //根据key，在result内添加{}, result[key]，也就是value
         let value = result[key] = {} // result[upload]
@@ -67,7 +69,6 @@ let init = (opt)=>{
     return [result, save, read, key, value]
 }
 //- - - - end - - - - //
-
 let read = (dir, key, value)=>{
     
     
@@ -128,7 +129,8 @@ let read = (dir, key, value)=>{
                     saveFile(result)     
                 }else if(opt.path == 'rel'){//相对路径                    
                     
-                    value[base] = path.relative(opt.base, file).split(path.sep).join('/')
+                    //拼接相对路径
+                    value[base] = (opt.basedir+'/'+ path.relative(opt.base, file)).split(path.sep).join('/')
 
                     //将result写入文件
                     saveFile(result)
@@ -168,9 +170,9 @@ let read = (dir, key, value)=>{
 
     readDir(dir, key, value)
 }
-
 //tree，主函数
-function tree(opt) {
+function tree(option) {
+    this.opt = option
     let initSet = init(opt) //根据opt初始化并返回值
         let result = initSet[0]   //保存路径
         let save = initSet[1]    //读取路径
@@ -184,5 +186,19 @@ function tree(opt) {
             read(dir, key, value)
         }
 }
-tree(opt)
 
+const upload = {
+    savePath: './json',
+    readPath: '../../../upload',
+    path: 'rel'
+}
+
+const reptile = {
+    savePath: './json',
+    readPath: '../../../reptile',
+    path: 'rel'
+}
+
+
+tree(upload)
+tree(reptile)

@@ -1,0 +1,58 @@
+# 名称
+name: Node运行main.js
+
+# 触发条件
+on:
+  push:
+    branches:
+    - master
+
+# jobs 任务
+jobs:
+  # 任务一
+  build:
+    name: '运行main.js'
+    #runs-on，指定运行的环境
+    runs-on: ubuntu-latest
+
+    # steps表示运行步骤，单个步骤 -
+    steps:
+          # name, 表示步骤名称
+      - name: '获取仓库'
+          # uses，引用action或docker镜像
+        uses: actions/checkout@v2
+      
+      - name: '安装Node'
+        uses: actions/setup-node@v2
+        with: 
+          node-version: 'v14.16.1'
+
+      - name: '运行main.js'
+          # run，运行命令, | 运行一组命令
+        run: cd ./Run/node/Tree
+        run: node tree.js
+
+      
+      - name: '上传仓库'
+
+        # 环境变量 env
+        # 环境变量的使用： $变量名
+        # ${{ secrets.名称 }} 是在仓库中的setting设置的
+        env: 
+          NAME: ${{ secrets.USER_NAME }}
+          EMAIL: ${{ secrets.USER_EMAIL }}
+
+        # 设置git信息，然后push到仓库
+        run: |
+            git config --global user.name $NAME
+            git config --global user.email $EMAIL
+
+            git add ./
+            git commit -m "Action Result"
+            git push origin master
+          
+          
+  
+  
+      
+
