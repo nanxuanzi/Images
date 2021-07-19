@@ -40,6 +40,7 @@ jobs:
         # 环境变量 env
         # 环境变量的使用： $变量名
         # ${{ secrets.名称 }} 是在仓库中的setting设置的
+<<<<<<< HEAD
          env: 
          NAME: ${{ secrets.USER_NAME }}
          EMAIL: ${{ secrets.USER_EMAIL }}
@@ -50,6 +51,18 @@ jobs:
 						git config --global user.name $NAME
 						git config --global user.email $EMAIL
             git add ./
+=======
+        env: 
+          NAME: ${{ secrets.USER_NAME }}
+          EMAIL: ${{ secrets.USER_EMAIL }}
+
+        # 设置git信息，然后push到仓库          
+        run: |
+            git config --global user.name $NAME
+            git config --global user.email $EMAIL
+            
+            git add .
+>>>>>>> 5d73941956bef485b5dee5513a5897fae9f9c62e
             git commit -m "Action Result"
             git push origin master
           
