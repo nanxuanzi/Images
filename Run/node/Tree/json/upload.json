@@ -2,10 +2,6 @@
     "upload": {
         "README.md": "upload/README.md",
         "img-web": {
-            "h": {
-                "1.jpg": "upload/img-web/h/1.jpg",
-                "2.png": "upload/img-web/h/2.png"
-            },
             "v": {
                 "girl": {
                     "1.jpg": "upload/img-web/v/girl/1.jpg",
@@ -39,6 +35,10 @@
                     "8.jpg": "upload/img-web/v/girl/8.jpg",
                     "9.jpg": "upload/img-web/v/girl/9.jpg"
                 }
+            },
+            "h": {
+                "1.jpg": "upload/img-web/h/1.jpg",
+                "2.png": "upload/img-web/h/2.png"
             }
         },
         "typora": {
