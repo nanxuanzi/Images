@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--
+        <base href="https://cdn.jsdelivr.net/gh/nanxuanzi/Images@master/">
+    -->
+    <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/nanxuanzi/nanxuanzi.github.io/favicon.ico" type="image/x-icon">
+    <script src="https://upcdn.b0.upaiyun.com/libs/jquery/jquery-2.0.2.min.js">
+    </script>
+    <script src="./js/images.js"></script>
+    <script src="./js/info.js"></script>
+    <script src="./js/imgTag.js"></script>
+    
+    
+    <title>图床-github</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color:#E8E8E8;
+        }
+        /*大盒子*/
+        div.box{
+            width: 1200px;
+            margin: 0px auto;
+            margin-bottom: 10px;
+            background-color:white;
+            padding: 5px;
+        }
+        #info {
+            text-align: center;
+        }
+
+        /*h3 and hr*/
+        h3{
+            margin-left: 10px;
+        }
+        hr{
+            height: 1px;
+            margin-left: 10px;
+            background-color: black;
+        }
+
+        /*小盒子-存放图片*/
+        .img-box{
+            width: 1150px;
+            margin: 5px auto; 
+            border-radius: 4px;
+            background-color:white;
+        }
+
+        /*单独图片的布局，超过盒子的宽度会自动换行*/
+        #i img{
+            width: 200px;
+            margin-left: 25px; 
+        }
+
+        #h img{
+            width: 200px;
+            margin-left: 25px;
+        }
+        #v img{
+            width: 200px;
+            margin-left: 25px;
+        }
+    </style>
+    
+</head>
+<body>
+    <script>
+        
+    </script>
+    <div class="box" id="info">
+        <h1>图床-Github</h1>
+        <p>Author:南轩子</p>
+    </div>
+
+    
+    <div class="box">
+        <h3>图床【自定义】</h2><hr>
+        <div class="img-box" id="i">
+            
+        </div>
+    </div>
+
+    <div class="box">
+            <h3>图床【横向】</h2><hr>
+            <div class="img-box" id="h">
+                
+            </div>
+    </div>
+
+    <div class="box">
+        <h3>图床【纵向】</h2><hr>
+        <div class="img-box" id="v">
+
+        </div>
+    </div>
+
+    <script>
+        //info
+        $(function(){//文档加载完成后再操作
+            //打开Github项目仓库
+            $("div#info h1").click(
+                function(){
+                    window.open("https://github.com/nanxuanzi/Images");
+                }
+            );
+            //打开Github个人信息
+            $("div#info p").click(function(){
+                window.open("https://github.com/nanxuanzi");
+            });
+        })
+        
+        /*
+            【功能】：解析json并将图片的src传入img标签
+        */
+
+        //获取json对象
+        $(function(){
+            //get请求json https://cdn.jsdelivr.net/gh/nanxuanzi/Images@master
+            $.get('https://cdn.jsdelivr.net/gh/nanxuanzi/Images@master/json/Images.json',(data,status)=>{
+                if(status='success'){
+                    console.log('请求json成功！')
+                    //h data.img.h
+                    for(let key in data.img.h){
+                        //获取路径字符串
+                        let path = data.img.h[key]
+                        //路径传入src
+                        $('.img-box#h').append("<img src='"+path+"'/>");
+                    }
+
+                    //i
+                    for(let key in data.ImgHosting.toux){
+                        //获取路径字符串
+                        let path = data.ImgHosting.toux[key]
+                        //路径传入src
+                        $('.img-box#i').append("<img src='"+path+"'/>");
+                    }
+                    //v data.img.v.girl
+                    for(let key in data.img.v.girl){
+                        //获取路径字符串
+                        let path = data.img.v.girl[key]
+                        //路径传入src
+                        $('.img-box#v').append("<img src='"+path+"'/>");
+                    }
+                }
+                else{
+                    console.log('请求json失败！')
+                    $('.img-box').append('<p>图片加载失败...</p>')
+                }
+                
+            
+            });
+        });
+    </script>
+</body>
+</html>
